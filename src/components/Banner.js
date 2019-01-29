@@ -45,8 +45,12 @@ const StyledBanner = styled.div`
     .first,
     .last {
       text-transform: uppercase;
-      font-size: 4.8rem;
+      font-size: 6.8rem;
       line-height: 1;
+
+      @media (max-width: 600px) {
+        font-size: 6.2rem;
+      }
     }
     .last {
       color: #8fdfde;
