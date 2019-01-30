@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from './Container';
+// import logo from '../img/portfolio_logo.png';
 
 const Navbar = ({ open, toggle }) => {
   return (
     <StyledNav>
       <Container>
-        <h2>RW</h2>
+        <h2>
+          {'RW'}
+          {/* <img src={logo} alt="Ryan Walker Logo" style={{ width: '40px' }} /> */}
+        </h2>
         <nav style={{ transform: open ? 'scale(1, 1)' : 'scale(1, 0)' }}>
           <a style={{ opacity: open ? 1 : null }} href="#home">
             Home
