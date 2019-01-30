@@ -10,7 +10,22 @@ import Footer from '../components/Footer';
 
 class App extends Component {
   state = { navOpen: false };
+
+  componentDidMount() {
+    if (window.innerWidth > 768) {
+      this.setState({ navOpen: true });
+    }
+  }
+
+  // componentDidUpdate(prevState) {
+  //   const { navOpen } = this.state;
+  //   if (window.innerWidth <= 768 && prevState.navOpen !== navOpen) {
+  //     this.setState({ navOpen: false });
+  //   }
+  // }
+
   toggleNav = () => this.setState({ navOpen: !this.state.navOpen });
+
   render() {
     const { navOpen } = this.state;
     return (

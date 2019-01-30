@@ -91,37 +91,43 @@ const StyledNav = styled.div`
     }
 
     .hamburger-container {
-      cursor: pointer;
-      height: 3rem;
-      padding: 1rem;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
+      display: none;
+      @media (max-width: 768px) {
+        cursor: pointer;
+        height: 3rem;
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
 
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-      width: 3rem;
-      height: 3px;
-      display: block;
-      background: #485460;
-      color: #485460;
-      border-radius: 5px;
-      position: relative;
-    }
-    .hamburger::before,
-    .hamburger::after {
-      content: '';
-      position: absolute;
-    }
+      .hamburger,
+      .hamburger::before,
+      .hamburger::after {
+        display: none;
+        @media (max-width: 768px) {
+          width: 3rem;
+          height: 3px;
+          display: block;
+          background: #485460;
+          color: #485460;
+          border-radius: 5px;
+          position: relative;
+        }
+      }
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        position: absolute;
+      }
 
-    .hamburger::before {
-      bottom: 8px;
-    }
+      .hamburger::before {
+        bottom: 8px;
+      }
 
-    .hamburger::after {
-      top: 8px;
+      .hamburger::after {
+        top: 8px;
+      }
     }
   }
 `;
