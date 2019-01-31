@@ -12,10 +12,11 @@ const Description = ({ show }) => {
         <StyledDescription style={props}>
           <h3>Suzie's Scores</h3>
           <p>
-            This is an app that does stuff and things check out the site here
-            and check out the repo on gittub it uses react, redux, postgres,
-            node, express backend. It has a full API backend that performs CRUD
-            thingys.
+            Aside from coding, I spend a night of my week hosting a pub quiz at
+            a local restaurant. After realizing that there is no good way to
+            keep track of teams' scores over a long period of time, I developed
+            this simple score tracker that keeps statistics on hand for teams,
+            as well as displays an all-time leader board.
           </p>
         </StyledDescription>
       )}
@@ -34,18 +35,19 @@ const StyledDescription = styled.div`
   }
   h3 {
     background: #3f3f3f;
-    color: #fff;
+    color: #fefefe;
     padding: 1rem;
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-style: italic;
+    font-size: 2.8rem;
+    text-align: center;
+    ${'' /* text-transform: uppercase; */}
+    font-weight: 400;
+    ${'' /* font-style: italic; */}
   }
   p {
     color: #485460;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 2px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-left: auto;
     .links {
       border-top: 5px solid #485460;

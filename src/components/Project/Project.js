@@ -24,10 +24,16 @@ class Project extends Component {
             src={image}
             alt="Project B"
           />
-          <div className="links">
+          <div className="left-links">
             <div className="link" style={{ opacity: show ? 1 : 0 }}>
-              <a href="http://github.com">Github</a>
-              <a href="http://github.com">Set3</a>
+              <a href="http://github.com">
+                <FontAwesomeIcon icon={['fab', 'github']} />
+                Github{' '}
+              </a>
+              <a href="http://github.com">
+                <FontAwesomeIcon icon="external-link-alt" />
+                WebSite
+              </a>
             </div>
 
             <Description show={show} />
@@ -58,18 +64,22 @@ const StyledProject = styled.div`
   margin-bottom: 10rem;
   border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.5);
   .project {
     position: relative;
     overflow: hidden;
-    background: #8fdfde;
+    background: #e4e4e4;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.7);
     img {
       transition: all 0.2s;
       width: 100%;
+      height: 60%;
+      margin: 0 auto;
       display: block;
     }
   }
-  .links {
+  .left-links {
     display: flex;
     .link {
       position: absolute;
@@ -82,14 +92,31 @@ const StyledProject = styled.div`
       width: 50%;
       height: 100%;
 
-      a {
+      a,
+      a:visited {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-size: 3rem;
-        padding: 2rem 0;
+        width: 60%;
+        padding: 1rem;
+        color: #3f3f3f;
+        background: rgba(143, 223, 222, 0.6);
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.2s;
+
+        &:hover {
+          background: rgba(143, 223, 222, 1);
+          ${'' /* box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.7); */}
+        }
       }
     }
   }
   .bottom {
-    background: #4b4b4b;
+    ${'' /* background: #4b4b4b; */}
     padding: 2rem 1rem;
     display: flex;
     justify-content: space-between;
@@ -97,7 +124,7 @@ const StyledProject = styled.div`
       padding: 1rem 0;
       font-style: italic;
       font-size: 1.4rem;
-      color: #fefefe;
+      ${'' /* color: #fefefe; */}
       span {
         border-bottom: 3px solid #8fdfde;
         margin-right: 0.8rem;
@@ -107,7 +134,7 @@ const StyledProject = styled.div`
       a,
       a:visited {
         font-size: 2.5rem;
-        color: #fefefe;
+        color: #4b4b4b;
         transition: all 0.2s;
         &:hover {
           color: #8fdfde;

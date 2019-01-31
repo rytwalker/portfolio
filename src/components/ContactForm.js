@@ -43,7 +43,7 @@ class ContactForm extends Component {
         {submitted ? (
           <div className="message">Success! Thank you for reaching out!</div>
         ) : null}
-        <h3>Get a hold of me</h3>
+        <h3>Send me a message:</h3>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
@@ -67,7 +67,7 @@ class ContactForm extends Component {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Message:</label>
           <textarea
             name="message"
             id="message"
@@ -91,8 +91,11 @@ const encode = data => {
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   .message {
     width: 100%;
     text-align: center;
@@ -103,6 +106,10 @@ const StyledForm = styled.form`
     border: 2px solid transparent;
     border-radius: 5px;
     transition: all 0.2s;
+  }
+  h3 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
   }
   .form-group {
     display: flex;

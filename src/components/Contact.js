@@ -11,16 +11,16 @@ class Contact extends Component {
       <StyledContact id="contact">
         <Container>
           <h2>Contact Me</h2>
-          <div className="grid">
-            <ContactForm />
-            <p>
+          {/* <div className="grid"> */}
+          <ContactForm />
+          {/* <p>
               Thanks for sticking around this long. Get a hold of me if you need
               anything! I'm currently looking for freelance opportunities and
               remote work. If you have any leads or just want to chat about
               something get a hold of me!
               <SocialLinks contact />
             </p>
-          </div>
+          </div> */}
         </Container>
       </StyledContact>
     );
@@ -34,11 +34,13 @@ const StyledContact = styled.div`
   padding-top: 80px;
 
   h2 {
-    font-size: 2.4rem;
-    font-weight: 700;
     font-style: italic;
+    font-size: 3.6rem;
+    font-weight: 400;
     text-transform: uppercase;
-    padding: 3rem 0;
+    margin-bottom: 3rem;
+    color: #fefefe;
+    padding: 1rem 0;
   }
 
   .grid {

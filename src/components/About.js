@@ -56,7 +56,7 @@ const About = props => {
 };
 
 const StyledAbout = styled.div`
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   align-items: center;
   margin: auto;
@@ -124,11 +124,7 @@ const StyledAbout = styled.div`
         li:before {
           content: '∞';
           padding-right: 5px;
-          ${'' /* color: #8fdfde; */}
-
-          @media (max-width: 768px) {
-            color: #fff;
-          }
+          color: #fefefe;
         }
       }
     }
