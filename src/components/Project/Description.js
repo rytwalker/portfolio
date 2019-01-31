@@ -28,12 +28,12 @@ const StyledDescription = styled.div`
   top: 0%;
   right: 0;
   width: 50%;
-  background: #f4f4f4;
+  background: rgba(254,254,254, .85);
   height: 100%;
   overflow: hidden;
   }
   h3 {
-    background: #485460;
+    background: #3f3f3f;
     color: #fff;
     padding: 1rem;
     font-size: 2.2rem;

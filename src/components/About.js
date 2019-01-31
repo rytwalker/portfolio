@@ -63,9 +63,9 @@ const StyledAbout = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vw), 0 100%);
   margin-bottom: -8vw;
   z-index: 10;
-  background: #fff;
+
+  background: #8fdfde;
   @media (max-width: 768px) {
-    background: #8fdfde;
     min-height: auto;
     padding: 50px 0;
   }
@@ -97,6 +97,7 @@ const StyledAbout = styled.div`
     .about-right {
       margin: 0 auto;
       padding: 2rem;
+      ${'' /* background: #fefefe; */}
       @media (max-width: 768px) {
         margin: 0;
       }
@@ -123,7 +124,7 @@ const StyledAbout = styled.div`
         li:before {
           content: '∞';
           padding-right: 5px;
-          color: #8fdfde;
+          ${'' /* color: #8fdfde; */}
 
           @media (max-width: 768px) {
             color: #fff;

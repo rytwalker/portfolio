@@ -20,22 +20,31 @@ class Project extends Component {
           onMouseLeave={this.toggleOff}
         >
           <img
-            style={{ opacity: show ? 0.4 : 1 }}
+            style={{ opacity: show ? 0.2 : 1 }}
             src={image}
             alt="Project B"
           />
-          <Description show={show} />
+          <div className="links">
+            <div className="link" style={{ opacity: show ? 1 : 0 }}>
+              <a href="http://github.com">Github</a>
+              <a href="http://github.com">Set3</a>
+            </div>
+
+            <Description show={show} />
+          </div>
         </div>
-        <div className="tech">
-          <span>tech: </span>React, Redux, Express, Node, Postgres
-        </div>
-        <div className="links">
-          <a href="https://github.com">
-            <FontAwesomeIcon icon={['fab', 'github']} />
-          </a>
-          <a href="https://github.com">
-            <FontAwesomeIcon icon="external-link-alt" />
-          </a>
+        <div className="bottom">
+          <div className="tech">
+            <span>tech: </span>React, Redux, Express, Node, Postgres
+          </div>
+          <div className="links">
+            <a href="https://github.com">
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </a>
+            <a href="https://github.com">
+              <FontAwesomeIcon icon="external-link-alt" />
+            </a>
+          </div>
         </div>
       </StyledProject>
     );
@@ -43,16 +52,15 @@ class Project extends Component {
 }
 
 const StyledProject = styled.div`
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
   align-items: center;
   grid-gap: 20px;
   width: 100%;
   margin-bottom: 10rem;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.5);
   .project {
     position: relative;
-    grid-column-start: span 3;
     overflow: hidden;
     background: #8fdfde;
     img {
@@ -61,26 +69,52 @@ const StyledProject = styled.div`
       display: block;
     }
   }
-  .tech {
-    padding: 1rem 0;
-    font-style: italic;
-    font-size: 1.4rem;
-    span {
-      border-bottom: 3px solid #8fdfde;
-      margin-right: 0.8rem;
+  .links {
+    display: flex;
+    .link {
+      position: absolute;
+      top: 0%;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+
+      a {
+        font-size: 3rem;
+        padding: 2rem 0;
+      }
     }
   }
-  .links {
-    a,
-    a:visited {
-      font-size: 2.5rem;
-      color: #485460;
-      transition: all 0.2s;
-      &:hover {
-        color: #8fdfde;
+  .bottom {
+    background: #4b4b4b;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    .tech {
+      padding: 1rem 0;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: #fefefe;
+      span {
+        border-bottom: 3px solid #8fdfde;
+        margin-right: 0.8rem;
       }
-      &:first-child {
-        margin-right: 3rem;
+    }
+    .links {
+      a,
+      a:visited {
+        font-size: 2.5rem;
+        color: #fefefe;
+        transition: all 0.2s;
+        &:hover {
+          color: #8fdfde;
+        }
+        &:first-child {
+          margin-right: 3rem;
+        }
       }
     }
   }

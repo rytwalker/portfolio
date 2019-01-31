@@ -38,9 +38,8 @@ class App extends Component {
           </Container>
           <About />
           <Contact />
-          <Container>
-            <Footer />
-          </Container>
+
+          <Footer />
         </Layout>
       </div>
     );

@@ -28,8 +28,8 @@ class Contact extends Component {
 }
 
 const StyledContact = styled.div`
-  background: #485460;
-  color: #fff;
+  background: #4b4b4b;
+  color: #fefefe;
   min-height: 100vh;
   padding-top: 80px;
 

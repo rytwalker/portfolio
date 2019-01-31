@@ -7,11 +7,17 @@ const Footer = props => {
       style={{
         textAlign: 'center',
         padding: '2rem 0',
-        width: '50%',
-        margin: '0 auto'
+        margin: '0 auto',
+        background: '#3F3F3F',
+        color: '#fefefe'
       }}
     >
-      <SocialLinks />© 2019 by Ryan Walker
+      <div className="container" style={{ width: '50%', margin: '0 auto' }}>
+        <SocialLinks contact />
+        <p style={{ padding: '1rem 0', fontSize: '1.2rem' }}>
+          © 2019 by Ryan Walker
+        </p>
+      </div>
     </footer>
   );
 };

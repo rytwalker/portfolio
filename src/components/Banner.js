@@ -15,8 +15,8 @@ const Banner = props => {
         )}
       </Spring>
       <p className="tag">
-        I am a full stack web developer based out of youngstown, ohio Here is a
-        second line that says more!
+        I am a full stack web developer from the center of the universe,
+        youngstown, ohio. I would love to work for you.
       </p>
       <a href="#work">View My Work</a>{' '}
     </StyledBanner>
