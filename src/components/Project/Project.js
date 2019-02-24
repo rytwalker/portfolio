@@ -24,7 +24,7 @@ class Project extends Component {
             src={image}
             alt="Project B"
           />
-          <div className="left-links">
+          {/* <div className="left-links">
             <div className="link" style={{ opacity: show ? 1 : 0 }}>
               <a href="http://github.com">
                 <FontAwesomeIcon icon={['fab', 'github']} />
@@ -37,9 +37,17 @@ class Project extends Component {
             </div>
 
             <Description show={show} />
-          </div>
+          </div> */}
         </div>
         <div className="bottom">
+          <div className="description">
+            <h3>Suzie's Scores</h3>
+            <p>
+              Aside from coding, I spend a night of my week hosting a pub quiz
+              at a local restaurant. After realizing that there is no good way
+              to keep track of teams'.
+            </p>
+          </div>
           <div className="tech">
             <span>tech: </span>React, Redux, Express, Node, Postgres
           </div>
@@ -61,9 +69,10 @@ const StyledProject = styled.div`
   align-items: center;
   grid-gap: 20px;
   width: 100%;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   border-radius: 2px;
   overflow: hidden;
+  min-height: 100vh;
   .project {
     position: relative;
     overflow: hidden;
@@ -120,6 +129,16 @@ const StyledProject = styled.div`
     padding: 2rem 1rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    .description {
+      margin-bottom: 1rem;
+      width: 100%;
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+    }
     .tech {
       padding: 1rem 0;
       font-style: italic;

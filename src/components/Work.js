@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Project from './Project/Project';
 import project_img_1 from '../img/suzies_scores_border.png';
-import project_img_2 from '../img/daily-pages.png';
+import project_img_2 from '../img/treasure-hunt.png';
 import project_img_3 from '../img/sj-arch.png';
 
 class Work extends Component {

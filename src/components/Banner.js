@@ -8,16 +8,12 @@ const Banner = props => {
       <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
         {props => (
           <h1 style={props}>
-            <span className="intro">Hello it's me,</span>
-            <span className="first">Ryan</span>
-            <span className="last">Walker</span>
+            {/* <span className="intro">Hello it's me,</span> */}
+            <span className="name">Ryan Walker</span>
+            <span className="tag">Is a Developer</span>
           </h1>
         )}
       </Spring>
-      <p className="tag">
-        I am a full stack web developer from the center of the universe,
-        youngstown, ohio. I would love to work for you.
-      </p>
       <a href="#work">View My Work</a>{' '}
     </StyledBanner>
   );
@@ -28,7 +24,8 @@ const StyledBanner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 75%;
+  align-items: center;
+  width: 100%;
   padding-top: 50px;
   @media (max-width: 768px) {
     width: 90%;
@@ -37,34 +34,56 @@ const StyledBanner = styled.div`
   h1 {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
-    .intro {
-      font-weight: 18px;
-      font-style: italic;
+    justify-content: center;
+    color: #000;
+    height: 317px;
+    max-width: 547px;
+    margin: 0 auto 3rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 100%;
+      width: 60%;
+      background: rgba(209, 52, 91, 0.8);
+      border-radius: 50%;
+      position: absolute;
+      z-index: 5;
     }
-    .first,
-    .last {
+    &::after {
+      content: '';
+      height: 100%;
+      width: 60%;
+      background: #8fdfde;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+    }
+    .name,
+    .tag {
       text-transform: uppercase;
-      font-size: 6.8rem;
+      font-size: 6rem;
       line-height: 1;
+      z-index: 100;
+      color: #070707;
+      padding: 0 2.5rem;
+      font-weight: 900;
 
       @media (max-width: 600px) {
-        font-size: 6.2rem;
+        font-size: 6rem;
       }
     }
-    .last {
-      color: #8fdfde;
+    .tag {
+      color: #efefef;
+      font-size: 4.8rem;
+      font-weight: 400;
     }
   }
-  .tag {
-    margin-bottom: 3rem;
-    font-size: 1.8rem;
-    font-style: italic;
-  }
   a {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: #fff;
     background: #485460;
+    font-weight: 400;
     width: 30%;
     padding: 1rem;
     border-radius: 5px;
@@ -73,6 +92,7 @@ const StyledBanner = styled.div`
     transition: 0.2s all;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     &:hover {
       color: #485460;
       background: transparent;

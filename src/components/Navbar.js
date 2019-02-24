@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-// import logo from '../img/portfolio_logo.png';
+import logo from '../img/logo.svg';
 
 const Navbar = ({ open, toggle }) => {
   return (
     <StyledNav>
       <Container>
-        <h2>
-          {'RW'}
-          {/* <img src={logo} alt="Ryan Walker Logo" style={{ width: '40px' }} /> */}
-        </h2>
+        <img src={logo} alt="Ryan Walker Logo" />
+
         <nav style={{ transform: open ? 'scale(1, 1)' : 'scale(1, 0)' }}>
           <a style={{ opacity: open ? 1 : null }} href="#home">
             Home
@@ -41,6 +39,7 @@ const StyledNav = styled.div`
   margin: 0 auto;
   z-index: 1000;
   left: 0;
+  box-shadow: 0 1px 3px -3px rgba(0, 0, 0, 0.3);
   div {
     display: flex;
     align-items: center;
