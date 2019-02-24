@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-import photo from '../img/professional_photo_small_bw_crop.png';
+import photo from '../img/headshot.png';
 import SocialLinks from './SocialLinks';
 
 const About = props => {

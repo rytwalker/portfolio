@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from './Container';
 import logo from '../img/logo.svg';
+import { Link } from 'gatsby';
 
 const Navbar = ({ open, toggle }) => {
   return (
@@ -10,9 +11,9 @@ const Navbar = ({ open, toggle }) => {
         <img src={logo} alt="Ryan Walker Logo" />
 
         <nav>
-          <a href="#home">Home</a>
+          <Link href="/">Home</Link>
           <a href="#work">Work</a>
-          <a href="#about">About</a>
+          <Link href="/about">About</Link>
           <a href="#contact">Contact</a>
         </nav>
         <div onClick={toggle} className="hamburger-container">

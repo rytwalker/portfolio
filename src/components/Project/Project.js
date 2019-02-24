@@ -131,12 +131,13 @@ const StyledProject = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     .description {
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
       width: 100%;
       h3 {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
       }
     }
     .tech {

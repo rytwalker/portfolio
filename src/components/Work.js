@@ -26,12 +26,13 @@ const StyledWork = styled.div`
   h2 {
     margin-bottom: 3rem;
     font-weight: bold;
-    font-style: italic;
+    /* font-style: italic; */
     text-transform: uppercase;
     font-size: 3.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 900;
     span {
       font-size: 1.2rem;
       font-weight: 700;
