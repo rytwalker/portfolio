@@ -8,7 +8,6 @@ const Banner = props => {
       <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
         {props => (
           <h1 style={props}>
-            {/* <span className="intro">Hello it's me,</span> */}
             <span className="name">Ryan Walker</span>
             <span className="tag">Is a Developer</span>
           </h1>
@@ -26,7 +25,6 @@ const StyledBanner = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 50px;
   @media (max-width: 768px) {
     width: 90%;
     margin: 0 auto;
