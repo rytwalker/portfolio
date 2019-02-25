@@ -8,7 +8,7 @@ import linkedinIcon from '../img/icons/linkedin-icon.svg';
 import githubIcon from '../img/icons/github-icon.svg';
 import twitterIcon from '../img/icons/twitter-icon.svg';
 import headshot from '../img/headshot.png';
-import { FlexContainer, Half } from '../elements';
+import { FlexContainer, Half, Heading } from '../elements';
 import { primary, primaryLight, darkGrey } from '../utilities';
 
 const skills = [
@@ -44,14 +44,6 @@ const AboutRight = styled(Half)`
   flex-wrap: wrap;
   padding: 5rem;
   background-color: ${primaryLight};
-`;
-
-const AboutHeading = styled.h1`
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 3.6rem;
-  width: 100%;
-  margin-bottom: 2rem;
 `;
 
 const SubHeading = styled.h2`
@@ -111,15 +103,15 @@ const AboutPage = () => {
           <img src={headshot} alt="It's me!" className="headshot" />
         </AboutLeft>
         <AboutRight>
-          <AboutHeading>About</AboutHeading>
+          <Heading>About</Heading>
           <p style={{ marginBottom: '2rem' }}>
             My name is Ryan Walker and I am a full-stack developer from
-            Youngstown, Ohio. I started my journey as a developer in the fall of
-            2017. Ever since starting my development journey, I have fallen more
-            in love with the process. I am currently enrolled at Lambda School.
-            I love JavaScript and learn more about it everyday. I also know:
-            HTML, CSS, LESS, Python, and C. And like using frameworks like React
-            and Django.{' '}
+            Youngstown, Ohio. Learning how to code started out as a hobby for
+            me, but I grew obsessed with building things that required both
+            creativity and logic. Right now I am currently enrolled at Lambda
+            School where I spend 40+ hours a week learning the latest web
+            development trends and fundamental computer science skills to bring
+            my projects to life.{' '}
           </p>
           <FlexContainer>
             <Half>

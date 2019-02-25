@@ -7,7 +7,7 @@ const Container = ({ children }) => {
 
 const StyledContainter = styled.div`
   width: 100%;
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto;
   position: relative;
 

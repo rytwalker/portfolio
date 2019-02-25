@@ -1,43 +1,74 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import Description from './Description';
+import { animated, Transition } from 'react-spring';
+import project_img_1 from '../../img/suzies-scores-desktop.png';
+import project_img_2 from '../../img/treasure-hunt.png';
+import project_img_3 from '../../img/daily-pages.png';
+import Icon from '../../utilities/Icon';
+
+const pages = [
+  style => (
+    <animated.div className="img-container" style={{ ...style }}>
+      <img src={project_img_1} alt="second" />
+    </animated.div>
+  ),
+  style => (
+    <animated.div className="img-container" style={{ ...style }}>
+      <img src={project_img_2} alt="second" />
+    </animated.div>
+  ),
+  style => (
+    <animated.div className="img-container" style={{ ...style }}>
+      <img src={project_img_3} alt="third" />
+    </animated.div>
+  )
+];
 
 class Project extends Component {
-  state = { show: false };
+  state = { index: 0, reverse: false };
 
-  toggleOn = () => this.setState({ show: true });
-  toggleOff = () => this.setState({ show: false });
+  toggle = e =>
+    this.setState(prevState => ({
+      index: prevState.index === 2 ? 0 : prevState.index + 1,
+      reverse: false
+    }));
+
+  toggleReverse = e =>
+    this.setState(prevState => ({
+      index: prevState.index === 0 ? 2 : prevState.index - 1,
+      reverse: true
+    }));
 
   render() {
-    const { show } = this.state;
-    const { image } = this.props;
+    const { reverse } = this.state;
+
     return (
       <StyledProject>
-        <div
-          className="project"
-          onMouseEnter={this.toggleOn}
-          onMouseLeave={this.toggleOff}
-        >
-          <img
-            style={{ opacity: show ? 0.2 : 1 }}
-            src={image}
-            alt="Project B"
-          />
-          {/* <div className="left-links">
-            <div className="link" style={{ opacity: show ? 1 : 0 }}>
-              <a href="http://github.com">
-                <FontAwesomeIcon icon={['fab', 'github']} />
-                Github{' '}
-              </a>
-              <a href="http://github.com">
-                <FontAwesomeIcon icon="external-link-alt" />
-                WebSite
-              </a>
-            </div>
-
-            <Description show={show} />
-          </div> */}
+        <div className="project">
+          <div className="arrow" onClick={this.toggle}>
+            <Icon name="arrowRight" color="rgba(0,0,0, 0.6)" />
+          </div>
+          <div className="arrow left" onClick={this.toggleReverse}>
+            <Icon name="arrowLeft" color="rgba(0,0,0, 0.6)" />
+          </div>
+          <Transition
+            native
+            reset
+            unique
+            items={this.state.index}
+            from={{
+              opacity: 0,
+              transform: `translate3d(${reverse ? '-100%' : '100%'},0,0)`
+            }}
+            enter={{ opacity: 1, transform: 'translate3d(0%,0,0)' }}
+            leave={{
+              opacity: 0,
+              transform: `translate3d(${reverse ? '50%' : '-50%'},0,0)`
+            }}
+          >
+            {index => pages[index]}
+          </Transition>
         </div>
         <div className="bottom">
           <div className="description">
@@ -66,29 +97,55 @@ class Project extends Component {
 }
 
 const StyledProject = styled.div`
-  align-items: center;
-  grid-gap: 20px;
+  display: grid;
+  grid-auto-rows: 1fr, 1fr;
   width: 100%;
+  height: 100%;
+  min-height: 100vh;
   margin-bottom: 5rem;
   border-radius: 2px;
+  /* overflow: hidden; */
   overflow: hidden;
-  min-height: 100vh;
+  position: relative;
   .project {
     position: relative;
-    overflow: hidden;
+    height: 558px;
+    display: block;
+    border-radius: 2.5px;
     background: #e4e4e4;
-    border-radius: 4px;
-    margin-bottom: 2rem;
     box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.7);
-    img {
-      transition: all 0.2s;
+    .arrow {
+      width: 100px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .left {
+      left: 0;
+    }
+    .img-container {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 60%;
-      margin: 0 auto;
+      height: 100%;
       display: block;
+
+      img {
+        transition: all 0.2s;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+      }
     }
   }
   .left-links {
+    margin-top: 100rem;
+    position: absolute;
+    bottom: 0;
     display: flex;
     .link {
       position: absolute;

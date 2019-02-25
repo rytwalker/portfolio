@@ -8,17 +8,17 @@ const Navbar = ({ open, toggle }) => {
   return (
     <StyledNav>
       <Container>
-        <img src={logo} alt="Ryan Walker Logo" />
-
-        <nav>
-          <Link href="/">Home</Link>
-          <a href="#work">Work</a>
-          <Link href="/about">About</Link>
-          <a href="#contact">Contact</a>
-        </nav>
         <div onClick={toggle} className="hamburger-container">
           <span className="hamburger" />
         </div>
+
+        <nav>
+          <Link to="/">Home</Link>
+          <a href="#work">Work</a>
+          <Link to="/about/">About</Link>
+          <a href="#contact">Contact</a>
+        </nav>
+        <img src={logo} alt="Ryan Walker Logo" />
       </Container>
     </StyledNav>
   );
@@ -59,8 +59,10 @@ const StyledNav = styled.div`
       a,
       a:visited {
         color: #485460;
-        margin-left: 3rem;
+        margin-right: 3rem;
         text-decoration: none;
+        /* font-weight: 700; */
+        text-transform: uppercase;
         padding: 0 0.5rem;
         transition: all 0.2s;
         &:hover {
