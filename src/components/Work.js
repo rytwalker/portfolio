@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Project from './Project/Project';
+import Project from './Project';
 import project_img_1 from '../img/suzies-scores-desktop.png';
 import project_img_2 from '../img/treasure-hunt.png';
 import project_img_3 from '../img/daily-pages.png';
