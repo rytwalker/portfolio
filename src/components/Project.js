@@ -26,44 +26,27 @@ const pages = [
 ];
 
 class Project extends Component {
-  state = { index: 0, reverse: false };
-
-  toggle = e =>
-    this.setState(prevState => ({
-      index: prevState.index === 2 ? 0 : prevState.index + 1,
-      reverse: false
-    }));
-
-  toggleReverse = e =>
-    this.setState(prevState => ({
-      index: prevState.index === 0 ? 2 : prevState.index - 1,
-      reverse: true
-    }));
-
   render() {
-    const { reverse } = this.state;
+    const { project } = this.props;
 
     return (
       <StyledProject>
         <Carousel pages={pages} />
         <ProjectDescription>
           <ProjectBlurb>
-            <ProjectHeading>Suzie's Scores</ProjectHeading>
-            <p>
-              Aside from coding, I spend a night of my week hosting a pub quiz
-              at a local restaurant. After realizing that there is no good way
-              to keep track of teams'.
-            </p>
+            <ProjectHeading>{project.title}</ProjectHeading>
+            <p>{project.description}</p>
           </ProjectBlurb>
           <ProjectTech>
-            <span>tech: </span>React, Redux, Express, Node, Postgres
+            <span>tech: </span>
+            {project.techStack.join(', ')}
           </ProjectTech>
           <ProjectLinks>
-            <a href="https://github.com">
-              <FontAwesomeIcon icon={['fab', 'github']} />
+            <a href={project.links[0]}>
+              Github: <FontAwesomeIcon icon={['fab', 'github']} />
             </a>
-            <a href="https://github.com">
-              <FontAwesomeIcon icon="external-link-alt" />
+            <a href={project.links[1]}>
+              Site: <FontAwesomeIcon icon="external-link-alt" />
             </a>
           </ProjectLinks>
         </ProjectDescription>
@@ -105,9 +88,10 @@ const ProjectTech = styled.div`
 const ProjectLinks = styled.div`
   a,
   a:visited {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #4b4b4b;
     transition: all 0.2s;
+    text-decoration: none;
     &:hover {
       color: #8fdfde;
     }

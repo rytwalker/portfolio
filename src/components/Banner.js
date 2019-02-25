@@ -68,12 +68,13 @@ const StyledBanner = styled.div`
       font-weight: 900;
 
       @media (max-width: 600px) {
-        font-size: 6rem;
+        font-size: 3rem;
+        padding: 0 2rem;
       }
     }
     .tag {
       color: #efefef;
-      font-size: 4.8rem;
+      font-size: 2rem;
       font-weight: 400;
     }
   }
