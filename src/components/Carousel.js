@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Transition } from 'react-spring';
 import Icon from '../utilities/Icon';
+import { above } from '../utilities';
 
 class Carousel extends Component {
   state = { index: 0, reverse: false };
@@ -53,11 +54,14 @@ class Carousel extends Component {
 
 const CarouselContainer = styled.div`
   position: relative;
-  height: 558px;
+  height: 221px;
   display: block;
   border-radius: 2.5px;
   background: #e4e4e4;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.7);
+  ${above.sm`
+    height: 558px;
+  `}
   .img-container {
     position: absolute;
     top: 0;
@@ -80,8 +84,12 @@ const CarouselControl = styled.div`
   width: 100px;
   position: absolute;
   top: 50%;
+  transform: translateY(20%);
   cursor: pointer;
   z-index: 1001;
+  ${above.sm`
+    transform: translateY(-50%);
+  `}
 `;
 
 const CarouselControlRight = styled(CarouselControl)`

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Spring } from 'react-spring';
+import { above } from '../utilities';
 
 const Banner = props => {
   return (
@@ -34,10 +35,13 @@ const StyledBanner = styled.div`
     flex-direction: column;
     justify-content: center;
     color: #000;
-    height: 317px;
+    height: 210px;
     max-width: 547px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 5rem;
     position: relative;
+    ${above.sm`
+      height: 317px;
+    `}
 
     &::before {
       content: '';
@@ -60,22 +64,23 @@ const StyledBanner = styled.div`
     .name,
     .tag {
       text-transform: uppercase;
-      font-size: 6rem;
       line-height: 1;
       z-index: 100;
+      font-size: 3.6rem;
       color: #070707;
       padding: 0 2.5rem;
       font-weight: 900;
-
-      @media (max-width: 600px) {
-        font-size: 3rem;
-        padding: 0 2rem;
-      }
+      ${above.sm`
+        font-size: 5.6rem;
+      `}
     }
     .tag {
       color: #efefef;
-      font-size: 2rem;
+      font-size: 2.8rem;
       font-weight: 400;
+      ${above.sm`
+        font-size: 3.8rem;
+      `}
     }
   }
   a {
@@ -83,7 +88,8 @@ const StyledBanner = styled.div`
     color: #fff;
     background: #485460;
     font-weight: 400;
-    width: 30%;
+    /* width: 75%; */
+    max-width: 320px;
     padding: 1rem;
     border-radius: 5px;
     border: 1px solid transparent;
@@ -92,13 +98,14 @@ const StyledBanner = styled.div`
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    width: 100%;
+    ${above.sm`
+        width: 100%;
+      `}
     &:hover {
       color: #485460;
       background: transparent;
       border: 1px solid #485460;
-    }
-    @media (max-width: 600px) {
-      width: 100%;
     }
   }
 `;

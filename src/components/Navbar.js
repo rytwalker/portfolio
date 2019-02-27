@@ -56,7 +56,7 @@ const NavContainer = styled.div`
 
 const NavLinks = styled.nav`
   position: absolute;
-  width: calc(100vh + 10%);
+  width: calc(100vw + 10%);
   top: 100%;
   left: -5%;
   text-align: left;

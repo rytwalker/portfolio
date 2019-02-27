@@ -6,6 +6,7 @@ import project_img_1 from '../img/suzies-scores-desktop.png';
 import project_img_2 from '../img/treasure-hunt.png';
 import project_img_3 from '../img/daily-pages.png';
 import Carousel from './Carousel';
+import { above } from '../utilities';
 
 const pages = [
   style => (
@@ -60,6 +61,7 @@ const ProjectDescription = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 10rem;
 `;
 
 const ProjectBlurb = styled.div`
@@ -106,11 +108,13 @@ const StyledProject = styled.div`
   grid-auto-rows: 1fr, 1fr;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
   margin-bottom: 5rem;
   border-radius: 2px;
   overflow: hidden;
   position: relative;
+  ${above.sm`
+    min-height: 100vh;
+  `}
 `;
 
 export default Project;
