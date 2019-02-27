@@ -9,7 +9,7 @@ import githubIcon from '../img/icons/github-icon.svg';
 import twitterIcon from '../img/icons/twitter-icon.svg';
 import headshot from '../img/headshot.png';
 import { FlexContainer, Half, Heading } from '../elements';
-import { primary, primaryLight, darkGrey } from '../utilities';
+import { above, primary, primaryLight, darkGrey } from '../utilities';
 
 const skills = [
   'JavaScript',
@@ -24,11 +24,22 @@ const skills = [
 
 const AboutContainer = styled(FlexContainer)`
   height: calc(100vh - 50px);
+  flex-wrap: wrap;
 `;
 
 const AboutLeft = styled(Half)`
   /* display: flex; */
   position: relative;
+  height: 70%;
+  ${above.xs`
+    height: 100%;
+  `}
+  ${above.md`
+    width: 0%;
+  `}
+  ${above.lg`
+    width: 50%;
+  `}
   .headshot {
     position: absolute;
     bottom: 0;
@@ -36,6 +47,13 @@ const AboutLeft = styled(Half)`
     z-index: 100;
     width: 100%;
     max-height: 100%;
+    display: block;
+    ${above.md`
+      display: none;
+    `}
+    ${above.lg`
+      display: block;
+    `}
   }
 `;
 
@@ -44,6 +62,13 @@ const AboutRight = styled(Half)`
   flex-wrap: wrap;
   padding: 5rem;
   background-color: ${primaryLight};
+  height: auto;
+  ${above.md`
+    width: 100%;
+  `}
+  ${above.lg`
+    width: 50%;
+  `}
 `;
 
 const SubHeading = styled.h2`
