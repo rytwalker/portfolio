@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Transition, animated, config } from 'react-spring';
 import { Link } from 'gatsby';
-import { Toggle, darkGrey, white } from '../utilities';
+import { above, Toggle, darkGrey, white, primary } from '../utilities';
 import logo from '../img/logo.svg';
 import Hamburger from './Hamburger';
 
@@ -19,7 +19,6 @@ const Navbar = () => {
                 config={config.gentle}
                 items={on}
                 from={{
-                  position: 'absolute',
                   overflow: 'hidden',
                   height: 0,
                   linkOpacity: 0
@@ -106,6 +105,13 @@ const NavLinks = styled(animated.nav)`
   background: ${darkGrey};
   transform-origin: top;
   transition: transform 300ms ease-out;
+  ${above.lg`
+    flex-direction: row;
+    background: none;
+    width: 100%;
+    position: static;
+    color: ${darkGrey}
+  `}
   a,
   a:visited {
     color: ${white};
@@ -113,9 +119,18 @@ const NavLinks = styled(animated.nav)`
     text-decoration: none;
     font-size: 1.8rem;
     transition: all 0.2s;
+    ${above.lg`
+      color: ${darkGrey}
+      padding: 0;
+      margin: 0 3rem;
+    `}
     &:hover {
       background: ${white};
       color: ${darkGrey};
+      ${above.lg`
+        color: ${white}
+        background: ${primary};
+      `}
     }
   }
   /* a,

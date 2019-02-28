@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { above } from '../utilities';
 
 const Hamburger = ({ toggle }) => {
   return (
@@ -16,6 +17,9 @@ const HamburgerContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  ${above.lg`
+    display: none;
+  `}
 `;
 
 const StyledHamburger = styled.span`
