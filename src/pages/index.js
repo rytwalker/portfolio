@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import About from '../components/About';
+// import About from '../components/About';
 import Banner from '../components/Banner';
 import Contact from '../components/Contact';
 import Container from '../components/Container';

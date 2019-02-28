@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Transition } from 'react-spring';
-import Icon from '../utilities/Icon';
+// import Icon from '../utilities/Icon';
 import { above } from '../utilities';
 
 class Carousel extends Component {
@@ -41,12 +41,12 @@ class Carousel extends Component {
           {index => this.props.pages[index]}
         </Transition>
         {/* CONTROLS */}
-        <CarouselControlRight onClick={this.toggle}>
+        {/* <CarouselControlRight onClick={this.toggle}>
           <Icon name="arrowRight" color="rgba(0,0,0, 0.6)" />
         </CarouselControlRight>
         <CarouselControlLeft onClick={this.toggleReverse}>
           <Icon name="arrowLeft" color="rgba(0,0,0, 0.6)" />
-        </CarouselControlLeft>
+        </CarouselControlLeft> */}
       </CarouselContainer>
     );
   }
@@ -54,18 +54,17 @@ class Carousel extends Component {
 
 const CarouselContainer = styled.div`
   position: relative;
-  height: 221px;
-  display: block;
+  height: 100%;
+  display: flex;
   border-radius: 2.5px;
   background: #e4e4e4;
-  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.7);
   ${above.sm`
-    height: 558px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.7);
   `}
   .img-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
     width: 100%;
     height: 100%;
     display: block;
@@ -80,23 +79,20 @@ const CarouselContainer = styled.div`
   }
 `;
 
-const CarouselControl = styled.div`
-  width: 100px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(20%);
-  cursor: pointer;
-  z-index: 1001;
-  ${above.sm`
-    transform: translateY(-50%);
-  `}
-`;
+// const CarouselControl = styled.div`
+//   width: 100px;
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(50%);
+//   cursor: pointer;
+//   z-index: 1001;
+// `;
 
-const CarouselControlRight = styled(CarouselControl)`
-  right: 0;
-`;
-const CarouselControlLeft = styled(CarouselControl)`
-  left: 0;
-`;
+// const CarouselControlRight = styled(CarouselControl)`
+//   right: 0;
+// `;
+// const CarouselControlLeft = styled(CarouselControl)`
+//   left: 0;
+// `;
 
 export default Carousel;

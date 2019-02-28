@@ -4,7 +4,7 @@ import Container from './Container';
 import ContactForm from './ContactForm';
 import { Heading } from '../elements';
 import { darkGrey } from '../utilities';
-import SocialLinks from './SocialLinks';
+// import SocialLinks from './SocialLinks';
 
 class Contact extends Component {
   state = {};

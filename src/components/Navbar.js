@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../img/logo.svg';
+import { Transition, animated, config } from 'react-spring';
 import { Link } from 'gatsby';
-import above, { Toggle, darkGrey, white } from '../utilities';
+import { Toggle, darkGrey, white } from '../utilities';
+import logo from '../img/logo.svg';
 import Hamburger from './Hamburger';
 
 const Navbar = () => {
@@ -13,15 +14,55 @@ const Navbar = () => {
           {({ on, toggle }) => (
             <>
               <Hamburger toggle={toggle} />
+              <Transition
+                native
+                config={config.gentle}
+                items={on}
+                from={{
+                  position: 'absolute',
+                  overflow: 'hidden',
+                  height: 0,
+                  linkOpacity: 0
+                }}
+                enter={{ height: 'auto', linkOpacity: 1 }}
+                leave={{ height: 0, linkOpacity: 0 }}
+              >
+                {on =>
+                  on &&
+                  (props => (
+                    <NavLinks style={props}>
+                      <Link style={{ opacity: props.linkOpacity }} to="/">
+                        Home
+                      </Link>
+                      <animated.a
+                        style={{ opacity: props.linkOpacity }}
+                        href="#work"
+                      >
+                        Work
+                      </animated.a>
+                      <Link style={{ opacity: props.linkOpacity }} to="/about/">
+                        About
+                      </Link>
+                      <animated.a
+                        style={{ opacity: props.linkOpacity }}
+                        href="#contact"
+                      >
+                        Contact
+                      </animated.a>
+                    </NavLinks>
+                  ))
+                }
+              </Transition>
 
-              {on && (
+              {/* {on && (
                 <NavLinks>
                   <Link to="/">Home</Link>
                   <a href="#work">Work</a>
                   <Link to="/about/">About</Link>
                   <a href="#contact">Contact</a>
                 </NavLinks>
-              )}
+              )} */}
+
               <img src={logo} alt="Ryan Walker Logo" />
             </>
           )}
@@ -54,7 +95,7 @@ const NavContainer = styled.div`
   position: relative;
 `;
 
-const NavLinks = styled.nav`
+const NavLinks = styled(animated.nav)`
   position: absolute;
   width: calc(100vw + 10%);
   top: 100%;

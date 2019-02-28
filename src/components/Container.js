@@ -11,7 +11,7 @@ const StyledContainter = styled.div`
   max-width: 960px;
   margin: 0 auto;
   position: relative;
-  ${above.sm`
+  ${above.lg`
     width: 100%;
   `}
 `;

@@ -6,7 +6,7 @@ import project_img_1 from '../img/suzies-scores-desktop.png';
 import project_img_2 from '../img/treasure-hunt.png';
 import project_img_3 from '../img/daily-pages.png';
 import Carousel from './Carousel';
-import { above } from '../utilities';
+import { above, darkGrey, primary, white } from '../utilities';
 
 const pages = [
   style => (
@@ -56,12 +56,26 @@ class Project extends Component {
   }
 }
 
+const StyledProject = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5rem;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  ${above.sm`
+    min-height: 100vh;
+  `}
+`;
+
 const ProjectDescription = styled.div`
   padding: 2rem 1rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 10rem;
+  margin-top: 3rem;
 `;
 
 const ProjectBlurb = styled.div`
@@ -80,9 +94,12 @@ const ProjectTech = styled.div`
   padding: 1rem 0;
   font-style: italic;
   font-size: 1.4rem;
-  ${'' /* color: #fefefe; */}
+  margin-bottom: 2rem;
+  ${above.sm`
+    margin-bottom: 0;
+  `}
   span {
-    border-bottom: 3px solid #8fdfde;
+    /* border-bottom: 3px solid #8fdfde; */
     margin-right: 0.8rem;
   }
 `;
@@ -91,30 +108,22 @@ const ProjectLinks = styled.div`
   a,
   a:visited {
     font-size: 2rem;
-    color: #4b4b4b;
+    color: ${darkGrey};
     transition: all 0.2s;
     text-decoration: none;
+    border-bottom: 2px solid ${primary};
+    border-top: 3px solid transparent;
+    /* border-radius: 5px; */
+    padding: 0.5rem;
     &:hover {
-      color: #8fdfde;
+      color: ${white};
+      background: ${primary};
+      border-top: 3px solid ${primary};
     }
     &:first-child {
       margin-right: 3rem;
     }
   }
-`;
-
-const StyledProject = styled.div`
-  display: grid;
-  grid-auto-rows: 1fr, 1fr;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 5rem;
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-  ${above.sm`
-    min-height: 100vh;
-  `}
 `;
 
 export default Project;
