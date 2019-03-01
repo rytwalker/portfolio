@@ -1,71 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Transition, animated, config } from 'react-spring';
+import { useTransition, animated } from 'react-spring';
 import { Link } from 'gatsby';
-import { above, Toggle, darkGrey, white, primary } from '../utilities';
+import { above, darkGrey, white, primary } from '../utilities';
 import logo from '../img/logo.svg';
 import Hamburger from './Hamburger';
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
+  const transitions = useTransition(toggle, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
+  });
+  let windowWidth = window.innerWidth;
+  useEffect(() => {
+    if (windowWidth >= 960) {
+      setToggle(true);
+    }
+  }, []);
   return (
     <StyledNav>
       <NavContainer>
-        <Toggle>
-          {({ on, toggle }) => (
-            <>
-              <Hamburger toggle={toggle} />
-              <Transition
-                native
-                config={config.gentle}
-                items={on}
-                from={{
-                  overflow: 'hidden',
-                  height: 0,
-                  linkOpacity: 0
-                }}
-                enter={{ height: 'auto', linkOpacity: 1 }}
-                leave={{ height: 0, linkOpacity: 0 }}
-              >
-                {on =>
-                  on &&
-                  (props => (
-                    <NavLinks style={props}>
-                      <Link style={{ opacity: props.linkOpacity }} to="/">
-                        Home
-                      </Link>
-                      <animated.a
-                        style={{ opacity: props.linkOpacity }}
-                        href="#work"
-                      >
-                        Work
-                      </animated.a>
-                      <Link style={{ opacity: props.linkOpacity }} to="/about/">
-                        About
-                      </Link>
-                      <animated.a
-                        style={{ opacity: props.linkOpacity }}
-                        href="#contact"
-                      >
-                        Contact
-                      </animated.a>
-                    </NavLinks>
-                  ))
-                }
-              </Transition>
-
-              {/* {on && (
-                <NavLinks>
+        <Hamburger toggle={() => setToggle(!toggle)} />
+        <>
+          {transitions.map(
+            ({ item, key, props }) =>
+              item && (
+                <NavLinks style={props} key={key}>
                   <Link to="/">Home</Link>
-                  <a href="#work">Work</a>
+                  <Link to="/#work">Work</Link>
                   <Link to="/about/">About</Link>
-                  <a href="#contact">Contact</a>
+                  <Link to="/#contact">Contact</Link>
                 </NavLinks>
-              )} */}
-
-              <img src={logo} alt="Ryan Walker Logo" />
-            </>
+              )
           )}
-        </Toggle>
+        </>
+
+        <img src={logo} alt="Ryan Walker Logo" />
       </NavContainer>
     </StyledNav>
   );
@@ -104,7 +76,7 @@ const NavLinks = styled(animated.nav)`
   flex-direction: column;
   background: ${darkGrey};
   transform-origin: top;
-  transition: transform 300ms ease-out;
+  transition: all 300ms ease-out;
   ${above.lg`
     flex-direction: row;
     background: none;

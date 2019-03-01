@@ -1,19 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spring } from 'react-spring';
+// import { Spring } from 'react-spring';
 import { above } from '../utilities';
 
 const Banner = props => {
   return (
     <StyledBanner>
-      <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-        {props => (
-          <h1 style={props}>
-            <span className="name">Ryan Walker</span>
-            <span className="tag">Is a Developer</span>
-          </h1>
-        )}
-      </Spring>
+      <h1 style={props}>
+        <span className="name">Ryan Walker</span>
+        <span className="tag">Is a Developer</span>
+      </h1>
       <a href="#work">View My Work</a>{' '}
     </StyledBanner>
   );
@@ -39,6 +35,9 @@ const StyledBanner = styled.div`
     max-width: 547px;
     margin: 0 auto 5rem;
     position: relative;
+    /* ${above.xs`
+      height: 267px;
+    `} */
     ${above.sm`
       height: 317px;
     `}
@@ -66,17 +65,17 @@ const StyledBanner = styled.div`
       text-transform: uppercase;
       line-height: 1;
       z-index: 100;
-      font-size: 3.6rem;
+      font-size: 3.3rem;
       color: #070707;
       padding: 0 2.5rem;
       font-weight: 900;
       ${above.sm`
-        font-size: 5.6rem;
+        font-size: 5.5rem;
       `}
     }
     .tag {
       color: #efefef;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 400;
       ${above.sm`
         font-size: 3.8rem;
@@ -98,9 +97,13 @@ const StyledBanner = styled.div`
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    width: 100%;
+    width: 85%;
+    ${above.xs`
+      max-width: 240px;
+    `}
     ${above.sm`
         width: 100%;
+        max-width: 320px;
       `}
     &:hover {
       color: #485460;

@@ -32,15 +32,16 @@ class Project extends Component {
 
     return (
       <StyledProject>
-        <Carousel pages={pages} />
+        <Carousel project_img={project.images[0]} />
         <ProjectDescription>
           <ProjectBlurb>
             <ProjectHeading>{project.title}</ProjectHeading>
             <p>{project.description}</p>
           </ProjectBlurb>
           <ProjectTech>
-            <span>tech: </span>
-            {project.techStack.join(', ')}
+            {project.techStack.map(tech => (
+              <span key={tech}>{tech}</span>
+            ))}
           </ProjectTech>
           <ProjectLinks>
             <a href={project.links[0]}>
@@ -65,7 +66,7 @@ const StyledProject = styled.div`
   border-radius: 2px;
   overflow: hidden;
   position: relative;
-  ${above.sm`
+  ${above.lg`
     min-height: 100vh;
   `}
 `;
@@ -101,13 +102,20 @@ const ProjectTech = styled.div`
   span {
     /* border-bottom: 3px solid #8fdfde; */
     margin-right: 0.8rem;
+    background: ${white};
+    padding: 0.5rem;
+    border-radius: 2.5px;
   }
 `;
 
 const ProjectLinks = styled.div`
+  /* display: flex;
+  justify-content: space-between;
+  width: 100%; */
+
   a,
   a:visited {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: ${darkGrey};
     transition: all 0.2s;
     text-decoration: none;

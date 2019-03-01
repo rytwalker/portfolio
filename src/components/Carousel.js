@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Transition } from 'react-spring';
+// import { Transition } from 'react-spring';
 // import Icon from '../utilities/Icon';
 import { above } from '../utilities';
 
@@ -20,10 +20,13 @@ class Carousel extends Component {
     }));
 
   render() {
-    const { reverse } = this.state;
+    // const { reverse } = this.state;
     return (
       <CarouselContainer>
-        <Transition
+        <div className="img-container">
+          <img src={this.props.project_img} alt="Project" />
+        </div>
+        {/* <Transition
           native
           reset
           unique
@@ -39,7 +42,7 @@ class Carousel extends Component {
           }}
         >
           {index => this.props.pages[index]}
-        </Transition>
+        </Transition> */}
         {/* CONTROLS */}
         {/* <CarouselControlRight onClick={this.toggle}>
           <Icon name="arrowRight" color="rgba(0,0,0, 0.6)" />
