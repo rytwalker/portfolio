@@ -7,7 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import Container from './Container';
 import Navbar from './Navbar';
-import './layout.css';
+import './Layout.css';
 
 library.add(fab, faExternalLinkAlt);
 
