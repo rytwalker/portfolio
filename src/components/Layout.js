@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import Container from '../Container';
-import Navbar from '../Navbar';
+import Container from './Container';
+import Navbar from './Navbar';
 import './layout.css';
 
 library.add(fab, faExternalLinkAlt);

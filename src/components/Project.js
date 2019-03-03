@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { animated } from 'react-spring';
-import project_img_1 from '../img/suzies-scores-desktop.png';
-import project_img_2 from '../img/treasure-hunt.png';
-import project_img_3 from '../img/daily-pages.png';
+// import { animated } from 'react-spring';
+// import project_img_1 from '../img/suzies-scores-desktop.png';
+// import project_img_2 from '../img/treasure-hunt.png';
+// import project_img_3 from '../img/daily-pages.png';
 import Carousel from './Carousel';
 import { above, darkGrey, primary, white } from '../utilities';
 
-const pages = [
-  style => (
-    <animated.div className="img-container" style={{ ...style }}>
-      <img src={project_img_1} alt="second" />
-    </animated.div>
-  ),
-  style => (
-    <animated.div className="img-container" style={{ ...style }}>
-      <img src={project_img_2} alt="second" />
-    </animated.div>
-  ),
-  style => (
-    <animated.div className="img-container" style={{ ...style }}>
-      <img src={project_img_3} alt="third" />
-    </animated.div>
-  )
-];
+// const pages = [
+//   style => (
+//     <animated.div className="img-container" style={{ ...style }}>
+//       <img src={project_img_1} alt="second" />
+//     </animated.div>
+//   ),
+//   style => (
+//     <animated.div className="img-container" style={{ ...style }}>
+//       <img src={project_img_2} alt="second" />
+//     </animated.div>
+//   ),
+//   style => (
+//     <animated.div className="img-container" style={{ ...style }}>
+//       <img src={project_img_3} alt="third" />
+//     </animated.div>
+//   )
+// ];
 
 class Project extends Component {
   render() {

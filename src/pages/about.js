@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
 import emailIcon from '../img/icons/email-icon.svg';
 import fireIcon from '../img/icons/fire-icon.svg';
