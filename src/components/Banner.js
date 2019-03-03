@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 // import { Spring } from 'react-spring';
-import { above } from '../utilities';
+import { above, white, darkGrey } from '../utilities';
 
 const Banner = props => {
   return (
@@ -32,13 +32,12 @@ const StyledBanner = styled.div`
     justify-content: center;
     color: #000;
     height: 210px;
-    max-width: 547px;
+    max-width: 350px;
+    width: 100%;
     margin: 0 auto 5rem;
     position: relative;
-    /* ${above.xs`
-      height: 267px;
-    `} */
     ${above.sm`
+    max-width: 550px;
       height: 317px;
     `}
 
@@ -65,12 +64,15 @@ const StyledBanner = styled.div`
       text-transform: uppercase;
       line-height: 1;
       z-index: 100;
-      font-size: 3.3rem;
+      font-size: 3.5rem;
       color: #070707;
       padding: 0 2.5rem;
       font-weight: 900;
       ${above.sm`
-        font-size: 5.5rem;
+        font-size: 5.6rem;
+      `}
+      ${above.md`
+      font-size: 6rem;
       `}
     }
     .tag {
@@ -78,16 +80,18 @@ const StyledBanner = styled.div`
       font-size: 2.6rem;
       font-weight: 400;
       ${above.sm`
-        font-size: 3.8rem;
+        font-size: 4rem;
+      `}
+      ${above.md`
+        font-size: 4.5rem;
       `}
     }
   }
   a {
     font-size: 1.8rem;
-    color: #fff;
-    background: #485460;
+    color: ${white};
+    background: ${darkGrey};
     font-weight: 400;
-    /* width: 75%; */
     max-width: 320px;
     padding: 1rem;
     border-radius: 5px;
