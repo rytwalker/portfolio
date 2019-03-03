@@ -9,19 +9,29 @@ import Hamburger from './Hamburger';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const transitions = useTransition(toggle, null, {
-    // from: { opacity: 0 },
-    // enter: { opacity: 1 },
-    // leave: { opacity: 0 }
     from: { transform: 'translate3d(-960px,0 ,0)' },
     enter: { transform: 'translate3d(0,0 ,0)' },
     leave: { transform: 'translate3d(-960px,0 ,0)' }
   });
+
   let windowWidth = window.innerWidth;
+
+  const mobileToggle = () => {
+    windowWidth = window.innerWidth;
+
+    if (windowWidth < 960) {
+      setToggle(false);
+    }
+  };
+
   useEffect(() => {
+    windowWidth = window.innerWidth;
+
     if (windowWidth >= 960) {
       setToggle(true);
     }
   }, []);
+
   return (
     <StyledNav>
       <NavContainer>
@@ -31,16 +41,16 @@ const Navbar = () => {
             ({ item, key, props }) =>
               item && (
                 <NavLinks style={props} key={key}>
-                  <Link onClick={() => setToggle(!toggle)} to="/">
+                  <Link onClick={mobileToggle} to="/">
                     Home
                   </Link>
-                  <Link onClick={() => setToggle(!toggle)} to="/#work">
+                  <Link onClick={mobileToggle} to="/#work">
                     Work
                   </Link>
-                  <Link onClick={() => setToggle(!toggle)} to="/about/">
+                  <Link onClick={mobileToggle} to="/about/">
                     About
                   </Link>
-                  <Link onClick={() => setToggle(!toggle)} to="/#contact">
+                  <Link onClick={mobileToggle} to="/#contact">
                     Contact
                   </Link>
                 </NavLinks>
