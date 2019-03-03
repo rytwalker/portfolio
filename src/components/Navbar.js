@@ -9,9 +9,12 @@ import Hamburger from './Hamburger';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const transitions = useTransition(toggle, null, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 }
+    // from: { opacity: 0 },
+    // enter: { opacity: 1 },
+    // leave: { opacity: 0 }
+    from: { transform: 'translate3d(-960px,0 ,0)' },
+    enter: { transform: 'translate3d(0,0 ,0)' },
+    leave: { transform: 'translate3d(-960px,0 ,0)' }
   });
   let windowWidth = window.innerWidth;
   useEffect(() => {
@@ -77,6 +80,7 @@ const NavLinks = styled(animated.nav)`
   background: ${darkGrey};
   transform-origin: top;
   transition: all 300ms ease-out;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12);
   ${above.lg`
     flex-direction: row;
     background: none;
