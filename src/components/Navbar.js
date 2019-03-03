@@ -31,10 +31,18 @@ const Navbar = () => {
             ({ item, key, props }) =>
               item && (
                 <NavLinks style={props} key={key}>
-                  <Link to="/">Home</Link>
-                  <Link to="/#work">Work</Link>
-                  <Link to="/about/">About</Link>
-                  <Link to="/#contact">Contact</Link>
+                  <Link onClick={() => setToggle(!toggle)} to="/">
+                    Home
+                  </Link>
+                  <Link onClick={() => setToggle(!toggle)} to="/#work">
+                    Work
+                  </Link>
+                  <Link onClick={() => setToggle(!toggle)} to="/about/">
+                    About
+                  </Link>
+                  <Link onClick={() => setToggle(!toggle)} to="/#contact">
+                    Contact
+                  </Link>
                 </NavLinks>
               )
           )}
@@ -87,6 +95,7 @@ const NavLinks = styled(animated.nav)`
     width: 100%;
     position: static;
     color: ${darkGrey}
+    box-shadow: none;
   `}
   a,
   a:visited {
@@ -109,19 +118,6 @@ const NavLinks = styled(animated.nav)`
       `}
     }
   }
-  /* a,
-  a:vistied {
-    color: #fff;
-    margin-left: 0;
-    padding: 2rem 3rem;
-    opacity: 0;
-    font-size: 3rem;
-    transition: opacity 250ms ease-in-out 250ms;
-  } */
-  /* &:hover {
-    border-bottom: none;
-    border-top: none;
-  } */
 `;
 
 export default Navbar;

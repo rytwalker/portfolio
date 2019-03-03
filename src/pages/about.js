@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
 import Layout from '../components/Layout/Layout';
 import Navbar from '../components/Navbar';
 import emailIcon from '../img/icons/email-icon.svg';
@@ -23,71 +24,77 @@ const skills = [
 ];
 
 const AboutPage = () => {
+  const props = useSpring({
+    opacity: 1,
+    from: { opacity: 0 }
+  });
   return (
-    <Layout>
-      <Navbar />
-      <AboutContainer>
-        <AboutLeft>
-          <img src={headshot} alt="It's me!" className="headshot" />
-        </AboutLeft>
-        <AboutRight>
-          <div>
-            <Heading style={{ marginBottom: '3rem' }}>About</Heading>
-            <p style={{ marginBottom: '5rem' }}>
-              My name is Ryan Walker and I am a full-stack developer from
-              Youngstown, Ohio. Learning how to code started out as a hobby for
-              me, but I grew obsessed with building things that required both
-              creativity and logic. Right now I am currently enrolled at Lambda
-              School where I spend 40+ hours a week learning the latest web
-              development trends and fundamental computer science skills to
-              bring my projects to life.{' '}
-            </p>
-            <FlexContainer>
-              <Half>
-                <SubHeading>Let's Connect</SubHeading>
-                <ConnectListItem
-                  href="@mailto:rytwalker@gmail.com"
-                  target="_blank"
-                >
-                  <img src={emailIcon} alt="Email" />
-                  Email
-                </ConnectListItem>
-                <ConnectListItem
-                  href="https://www.linkedin.com/in/ryan-walker-41082b47/"
-                  target="_blank"
-                >
-                  <img src={linkedinIcon} alt="Linkedin" />
-                  Linkedin
-                </ConnectListItem>
-                <ConnectListItem
-                  href="https://github.com/rytwalker"
-                  target="_blank"
-                >
-                  <img src={githubIcon} alt="Github" />
-                  Github
-                </ConnectListItem>
-                <ConnectListItem
-                  href="https://twitter.com/mr_ryanwalker"
-                  target="_blank"
-                >
-                  <img src={twitterIcon} alt="Twitter" />
-                  Twitter
-                </ConnectListItem>
-              </Half>
-              <Half>
-                <SubHeading>Skills</SubHeading>
-                {skills.map(skill => (
-                  <SkillsListItem key={skill}>
-                    <img src={fireIcon} alt="Fire" />
-                    {skill}
-                  </SkillsListItem>
-                ))}
-              </Half>
-            </FlexContainer>
-          </div>
-        </AboutRight>
-      </AboutContainer>
-    </Layout>
+    <animated.div style={props}>
+      <Layout>
+        <Navbar />
+        <AboutContainer>
+          <AboutLeft>
+            <img src={headshot} alt="It's me!" className="headshot" />
+          </AboutLeft>
+          <AboutRight>
+            <div>
+              <Heading style={{ marginBottom: '3rem' }}>About</Heading>
+              <p style={{ marginBottom: '5rem' }}>
+                My name is Ryan Walker and I am a full-stack developer from
+                Youngstown, Ohio. Learning how to code started out as a hobby
+                for me, but I grew obsessed with building things that required
+                both creativity and logic. Right now I am currently enrolled at
+                Lambda School where I spend 40+ hours a week learning the latest
+                web development trends and fundamental computer science skills
+                to bring my projects to life.{' '}
+              </p>
+              <FlexContainer>
+                <Half>
+                  <SubHeading>Let's Connect</SubHeading>
+                  <ConnectListItem
+                    href="@mailto:rytwalker@gmail.com"
+                    target="_blank"
+                  >
+                    <img src={emailIcon} alt="Email" />
+                    Email
+                  </ConnectListItem>
+                  <ConnectListItem
+                    href="https://www.linkedin.com/in/ryan-walker-41082b47/"
+                    target="_blank"
+                  >
+                    <img src={linkedinIcon} alt="Linkedin" />
+                    Linkedin
+                  </ConnectListItem>
+                  <ConnectListItem
+                    href="https://github.com/rytwalker"
+                    target="_blank"
+                  >
+                    <img src={githubIcon} alt="Github" />
+                    Github
+                  </ConnectListItem>
+                  <ConnectListItem
+                    href="https://twitter.com/mr_ryanwalker"
+                    target="_blank"
+                  >
+                    <img src={twitterIcon} alt="Twitter" />
+                    Twitter
+                  </ConnectListItem>
+                </Half>
+                <Half>
+                  <SubHeading>Skills</SubHeading>
+                  {skills.map(skill => (
+                    <SkillsListItem key={skill}>
+                      <img src={fireIcon} alt="Fire" />
+                      {skill}
+                    </SkillsListItem>
+                  ))}
+                </Half>
+              </FlexContainer>
+            </div>
+          </AboutRight>
+        </AboutContainer>
+      </Layout>
+    </animated.div>
   );
 };
 
