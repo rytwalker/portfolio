@@ -13,11 +13,16 @@ const Navbar = () => {
     enter: { transform: 'translate3d(0,0 ,0)' },
     leave: { transform: 'translate3d(-960px,0 ,0)' }
   });
+  let windowWidth;
 
-  let windowWidth = window.innerWidth;
+  if (typeof window !== `undefined`) {
+    windowWidth = window.innerWidth;
+  }
 
   const mobileToggle = () => {
-    windowWidth = window.innerWidth;
+    if (typeof window !== `undefined`) {
+      windowWidth = window.innerWidth;
+    }
 
     if (windowWidth < 960) {
       setToggle(false);
@@ -25,7 +30,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    windowWidth = window.innerWidth;
+    if (typeof window !== `undefined`) {
+      windowWidth = window.innerWidth;
+    }
 
     if (windowWidth >= 960) {
       setToggle(true);
@@ -47,7 +54,7 @@ const Navbar = () => {
                   <Link onClick={mobileToggle} to="/#work">
                     Work
                   </Link>
-                  <Link onClick={mobileToggle} to="/about/">
+                  <Link onClick={mobileToggle} to="/about">
                     About
                   </Link>
                   <Link onClick={mobileToggle} to="/#contact">
