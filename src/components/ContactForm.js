@@ -39,7 +39,11 @@ class ContactForm extends Component {
     const { name, email, message } = this.state.formData;
     const { submitted } = this.state;
     return (
-      <StyledForm onSubmit={this.handleFormSubmit}>
+      <StyledForm
+        onSubmit={this.handleFormSubmit}
+        data-netlify="true"
+        name="portfolio"
+      >
         {submitted ? (
           <div className="message">Success! Thank you for reaching out!</div>
         ) : null}
