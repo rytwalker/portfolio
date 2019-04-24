@@ -17,9 +17,9 @@ const App = () => {
       <Layout>
         <Container>
           <Banner />
-          <Work />
+          {/* <Work /> */}
         </Container>
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
       </Layout>
     </animated.div>

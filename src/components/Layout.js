@@ -37,9 +37,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Container>
-          <Navbar />
-        </Container>
+        <Container>{/* <Navbar /> */}</Container>
         <div>{children}</div>
       </>
     )}

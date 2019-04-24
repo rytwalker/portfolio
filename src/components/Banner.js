@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 // import { Spring } from 'react-spring';
-import { above, white, darkGrey } from '../utilities';
+import { above, white, darkGrey, primary } from '../utilities';
 
 const Banner = props => {
   return (
@@ -10,7 +11,13 @@ const Banner = props => {
         <span className="name">Ryan Walker</span>
         <span className="tag">Is a Developer</span>
       </h1>
-      <a href="#work">View My Work</a>{' '}
+      {/* <a href="#work">View My Work</a>{' '} */}
+      <a href="mailto:rytwalker@gmail.com" target="_blank">
+        Contact me
+      </a>{' '}
+      <Link className="simple" to="/about">
+        find out more about me
+      </Link>
     </StyledBanner>
   );
 };
@@ -113,6 +120,16 @@ const StyledBanner = styled.div`
       color: #485460;
       background: transparent;
       border: 1px solid #485460;
+    }
+  }
+  .simple {
+    background: none;
+    color: ${darkGrey};
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    &:hover {
+      border: none;
+      color: ${primary};
     }
   }
 `;

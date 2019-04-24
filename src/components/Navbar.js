@@ -42,7 +42,8 @@ const Navbar = () => {
   return (
     <StyledNav>
       <NavContainer>
-        <Hamburger toggle={() => setToggle(!toggle)} />
+        <Link to="/">back</Link>
+        {/* <Hamburger toggle={() => setToggle(!toggle)} />
         <>
           {transitions.map(
             ({ item, key, props }) =>
@@ -65,7 +66,7 @@ const Navbar = () => {
           )}
         </>
 
-        <img src={logo} alt="Ryan Walker Logo" />
+        <img src={logo} alt="Ryan Walker Logo" /> */}
       </NavContainer>
     </StyledNav>
   );
