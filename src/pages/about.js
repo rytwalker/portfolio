@@ -52,7 +52,7 @@ const AboutPage = () => {
                 <Half>
                   <SubHeading>Let's Connect</SubHeading>
                   <ConnectListItem
-                    href="@mailto:rytwalker@gmail.com"
+                    href="mailto:rytwalker@gmail.com"
                     target="_blank"
                   >
                     <img src={emailIcon} alt="Email" />
